@@ -2,8 +2,6 @@
 
 This example demonstrates how to deploy a basic Discord bot using HonoCord within an existing Hono application, deployed with Bun.
 
-Refer to the [HonoCord Examples README](../README.md) for detailed setup and deployment instructions.
-
 ## Environment Variables
 
 ```

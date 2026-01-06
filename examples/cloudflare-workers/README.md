@@ -2,8 +2,6 @@
 
 This example demonstrates how to deploy a basic Discord bot using HonoCord on Cloudflare Workers.
 
-Refer to the [HonoCord Examples README](../README.md) for detailed setup and deployment instructions.
-
 ## Environment Variables
 
 ```
