@@ -1,0 +1,20 @@
+{
+  "name": "example-cloudflare-workers",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy --minify",
+    "cf-typegen": "wrangler types --env-interface CloudflareBindings",
+    "register": "tsx --env-file=.env src/register.ts"
+  },
+  "dependencies": {
+    "hono": "^4.11.3",
+    "honocord": "^0.0.14"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.3",
+    "tsx": "^4.21.0",
+    "wrangler": "^4.4.0"
+  }
+}
