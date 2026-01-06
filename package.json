@@ -5,8 +5,11 @@
   "description": "Example applications using HonoCord",
   "scripts": {
     "dev:worker": "pnpm --filter example-cloudflare-workers dev",
+    "dev:custom": "pnpm --filter example-custom-hono-integration dev",
     "deploy:worker": "pnpm --filter example-cloudflare-workers deploy",
+    "start:custom": "pnpm --filter example-custom-hono-integration start",
     "register:worker": "pnpm --filter example-cloudflare-workers register",
+    "register:custom": "pnpm --filter example-custom-hono-integration register",
     "register:all": "pnpm -r register"
   },
   "devDependencies": {

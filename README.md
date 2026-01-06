@@ -27,7 +27,7 @@ pnpm install
 3. Navigate to an example:
 
 ```bash
-cd examples/basic-bot
+cd examples/cloudflare-workers
 ```
 
 4. Copy the environment file and configure:

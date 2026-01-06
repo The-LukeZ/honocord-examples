@@ -1,0 +1,15 @@
+{
+  "name": "custom-hono-integration",
+  "scripts": {
+    "dev": "bun run --hot src/index.ts",
+    "start": "bun run src/index.ts",
+    "register": "bun --env-file=.env run src/register.ts"
+  },
+  "dependencies": {
+    "hono": "^4.11.3",
+    "honocord": "^0.0.14"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
+}
