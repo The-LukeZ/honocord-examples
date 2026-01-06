@@ -1,6 +1,6 @@
 # HonoCord Examples
 
-A collection of example applications demonstrating how to use [HonoCord](https://github.com/yourusername/honocord).
+A collection of example applications demonstrating how to use [HonoCord](https://honocord.thelukez.com).
 
 ## Examples
 
@@ -12,7 +12,7 @@ A collection of example applications demonstrating how to use [HonoCord](https:/
 1. Clone this repository:
 
 ```bash
-git clone https://github.com/yourusername/honocord-examples.git
+git clone https://github.com/The-LukeZ/honocord-examples.git
 cd honocord-examples
 ```
 
