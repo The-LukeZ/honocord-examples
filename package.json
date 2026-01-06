@@ -4,9 +4,9 @@
   "private": true,
   "description": "Example applications using HonoCord",
   "scripts": {
-    "dev:basic": "pnpm --filter example-basic-bot dev",
-    "deploy:basic": "pnpm --filter example-basic-bot deploy",
-    "register:basic": "pnpm --filter example-basic-bot register",
+    "dev:worker": "pnpm --filter example-cloudflare-workers dev",
+    "deploy:worker": "pnpm --filter example-cloudflare-workers deploy",
+    "register:worker": "pnpm --filter example-cloudflare-workers register",
     "register:all": "pnpm -r register"
   },
   "devDependencies": {
