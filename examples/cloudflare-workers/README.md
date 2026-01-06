@@ -17,3 +17,10 @@ IS_CF_WORKER=true # IMPORTANT
 - `pnpm run deploy` - Deploy the bot to Cloudflare Workers
 - `pnpm run register` - Register the bot commands with Discord
 - `pnpm cf-typegen` - Generate Cloudflare Worker types for Honocord
+
+## Notes
+
+After starting this example, the development server will accept the following routes:
+
+- `GET *` - A simple greeting endpoint
+- `POST /interactions` - The Discord interactions endpoint handled by HonoCord

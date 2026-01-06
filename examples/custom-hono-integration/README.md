@@ -17,3 +17,11 @@ MY_VARIABLE=some_value
 - `bun run dev` - Run the development server with Wrangler
 - `bun run start` - Start the bot with Bun
 - `bun run register` - Register the bot commands with Discord
+
+## Notes
+
+After starting this example, the delopment server will accept the following routes:
+
+- `GET /` - A simple greeting endpoint
+- `GET /interactions` - A simple test endpoint to verify the server is running
+- `POST /interactions` - The Discord interactions endpoint handled by HonoCord
