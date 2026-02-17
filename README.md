@@ -1,11 +1,11 @@
-# HonoCord Examples
+# Honocord Examples
 
-A collection of example applications demonstrating how to use [HonoCord](https://honocord.thelukez.com).
+A collection of example applications demonstrating how to use [Honocord](https://honocord.thelukez.com).
 
 ## Examples
 
 - **[cloudflare-workers](./examples/cloudflare-workers)** - Basic bot deployed on Cloudflare Workers
-- **[custom-hono-integration](./examples/custom-hono-integration)** - Using HonoCord with an existing Hono app
+- **[custom-hono-integration](./examples/custom-hono-integration)** - Using Honocord with an existing Hono app
 - **[webhook-events](./examples/webhook-events)** - Responding to Discord webhook events
 
 ## Getting Started

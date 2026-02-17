@@ -1,6 +1,6 @@
 # Honocord Cloudflare Workers Example
 
-This example demonstrates how to deploy a basic Discord bot using HonoCord on Cloudflare Workers.
+This example demonstrates how to deploy a basic Discord bot using Honocord on Cloudflare Workers.
 
 ## Environment Variables
 
@@ -23,4 +23,4 @@ IS_CF_WORKER=true # IMPORTANT
 After starting this example, the development server will accept the following routes:
 
 - `GET *` - A simple greeting endpoint
-- `POST /interactions` - The Discord interactions endpoint handled by HonoCord
+- `POST /interactions` - The Discord interactions endpoint handled by Honocord

@@ -1,6 +1,6 @@
 # Honocord Integration in an Existing Hono App Example
 
-This example demonstrates how to deploy a basic Discord bot using HonoCord within an existing Hono application, deployed with Bun.
+This example demonstrates how to deploy a basic Discord bot using Honocord within an existing Hono application, deployed with Bun.
 
 ## Environment Variables
 
@@ -24,4 +24,4 @@ After starting this example, the delopment server will accept the following rout
 
 - `GET /` - A simple greeting endpoint
 - `GET /interactions` - A simple test endpoint to verify the server is running
-- `POST /interactions` - The Discord interactions endpoint handled by HonoCord
+- `POST /interactions` - The Discord interactions endpoint handled by Honocord

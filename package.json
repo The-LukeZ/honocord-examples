@@ -2,7 +2,7 @@
   "name": "honocord-examples",
   "version": "1.0.0",
   "private": true,
-  "description": "Example applications using HonoCord",
+  "description": "Example applications using Honocord",
   "scripts": {
     "dev:worker": "pnpm --filter example-cloudflare-workers dev",
     "dev:custom": "pnpm --filter example-custom-hono-integration dev",
