@@ -1,9 +1,11 @@
-import { Hono } from 'hono'
+import { Honocord } from "honocord";
+import handler from "./handler";
 
-const app = new Hono()
+const bot = new Honocord({ isCFWorker: true });
 
-app.get('/', (c) => {
-  return c.text('Hello Hono!')
-})
+bot.loadHandlers(handler);
 
-export default app
+export default bot.getApp({
+  interactionsPath: "/interactions", // not actually needed for this example
+  webhookPath: "/webhooks", // default is "/webhook" - you can change it to whatever you want
+});

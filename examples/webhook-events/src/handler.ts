@@ -23,7 +23,7 @@ const handler = new WebhookEventHandler<
   try {
     dm = (await rest.post(Routes.userChannels(), {
       body: {
-        recipient_id: "123456789012345678",
+        recipient_id: data.user.id,
       },
     })) as APIDMChannel;
   } catch (error) {
@@ -52,3 +52,5 @@ const handler = new WebhookEventHandler<
     files,
   });
 });
+
+export default handler;

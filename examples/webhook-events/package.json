@@ -10,7 +10,7 @@
     "@discordjs/rest": "^2.6.0",
     "discord-api-types": "^0.38.39",
     "hono": "^4.11.9",
-    "honocord": "2.0.0-beta.1771363004"
+    "honocord": "2.0.0-beta.1771363798"
   },
   "devDependencies": {
     "@types/node": "^25.0.3",
