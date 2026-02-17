@@ -14,5 +14,6 @@
   },
   "devDependencies": {
     "typescript": "^5.0.0"
-  }
+  },
+  "packageManager": "pnpm@10.29.2"
 }
