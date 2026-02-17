@@ -6,6 +6,7 @@ A collection of example applications demonstrating how to use [HonoCord](https:/
 
 - **[cloudflare-workers](./examples/cloudflare-workers)** - Basic bot deployed on Cloudflare Workers
 - **[custom-hono-integration](./examples/custom-hono-integration)** - Using HonoCord with an existing Hono app
+- **[webhook-events](./examples/webhook-events)** - Responding to Discord webhook events
 
 ## Getting Started
 
