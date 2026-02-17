@@ -41,7 +41,7 @@ const handler = new WebhookEventHandler<
   const attachment = new AttachmentBuilder(
     Buffer.from("Hello, world!"),
   ).setName("hello.txt");
-  const { files, attachments } = attachment.resolve();
+  const { files, attachments } = attachment.resolve(); // Fun fact: This is very similar to how discord.js does this under the hood!
 
   await rest.post(Routes.channelMessages(dm.id), {
     body: {
