@@ -22,5 +22,6 @@ IS_CF_WORKER=true # IMPORTANT
 
 After starting this example, the development server will accept the following routes:
 
-- `GET *` - A simple greeting endpoint
+- `GET /` - A simple greeting endpoint
 - `POST /interactions` - The Discord interactions endpoint handled by Honocord
+- `POST /webhooks` - The webhooks endpoint for receiving events from Discord, handled by Honocord
