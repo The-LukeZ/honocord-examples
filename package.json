@@ -5,12 +5,15 @@
   "description": "Example applications using Honocord",
   "scripts": {
     "dev:worker": "pnpm --filter example-cloudflare-workers dev",
-    "dev:custom": "pnpm --filter example-custom-hono-integration dev",
-    "deploy:worker": "pnpm --filter example-cloudflare-workers deploy",
-    "start:custom": "pnpm --filter example-custom-hono-integration start",
+    "dev:custom": "pnpm --filter custom-hono-integration dev",
+    "dev:webhook": "pnpm --filter webhook-events dev",
+    "start:custom": "pnpm --filter custom-hono-integration start",
     "register:worker": "pnpm --filter example-cloudflare-workers register",
-    "register:custom": "pnpm --filter example-custom-hono-integration register",
-    "register:all": "pnpm -r register"
+    "register:custom": "pnpm --filter custom-hono-integration register",
+    "register:webhook": "pnpm --filter webhook-events register",
+    "register:all": "pnpm -r register",
+    "deploy:worker": "pnpm --filter example-cloudflare-workers deploy",
+    "deploy:webhook": "pnpm --filter webhook-events deploy"
   },
   "devDependencies": {
     "typescript": "^5.0.0"
