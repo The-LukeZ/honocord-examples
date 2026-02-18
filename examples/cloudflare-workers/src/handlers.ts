@@ -74,7 +74,9 @@ export const confirmHandler = new ComponentHandler(
         .toJSON(),
       {
         type: ComponentType.Label,
-        label: "This is a label",
+        label: "This is a single checkbox",
+        description:
+          "It can't be required; Use a required checkbox group with one option instead",
         component: {
           type: ComponentType.Checkbox,
           custom_id: "checkbox_1",
@@ -82,7 +84,8 @@ export const confirmHandler = new ComponentHandler(
       },
       {
         type: ComponentType.Label,
-        label: "This is a text input",
+        label: "This is a checkbox group",
+        description: "This is a checkbox group with multiple options",
         component: {
           type: ComponentType.CheckboxGroup,
           custom_id: "checkbox_group_1",
@@ -102,7 +105,8 @@ export const confirmHandler = new ComponentHandler(
       },
       {
         type: ComponentType.Label,
-        label: "This is a select menu",
+        label: "This is a radio group",
+        description: "This is a radio group with multiple options",
         component: {
           type: ComponentType.RadioGroup,
           custom_id: "radio_group_1",
