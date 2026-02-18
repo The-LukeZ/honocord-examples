@@ -24,8 +24,8 @@ importers:
         specifier: ^4.11.3
         version: 4.11.3
       honocord:
-        specifier: 2.0.0-beta.1771409281
-        version: 2.0.0-beta.1771409281
+        specifier: 2.0.0-beta.1771411035
+        version: 2.0.0-beta.1771411035
     devDependencies:
       '@types/node':
         specifier: ^25.0.3
@@ -533,20 +533,20 @@ packages:
   glob-to-regexp@0.4.1:
     resolution: {integrity: sha512-lkX1HJXwyMcprw/5YUZc2s7DrpAiHB21/V+E1rHUrVNokkvB6bqMzT0VfV6/86ZNabt1k14YOIaT7nDvOX3Iiw==}
 
-  hono@4.11.3:
-    resolution: {integrity: sha512-PmQi306+M/ct/m5s66Hrg+adPnkD5jiO6IjA7WhWw0gSBSo1EcRegwuI1deZ+wd5pzCGynCcn2DprnE4/yEV4w==}
+  hono@4.11.10:
+    resolution: {integrity: sha512-kyWP5PAiMooEvGrA9jcD3IXF7ATu8+o7B3KCbPXid5se52NPqnOpM/r9qeW2heMnOekF4kqR1fXJqCYeCLKrZg==}
     engines: {node: '>=16.9.0'}
 
-  hono@4.11.9:
-    resolution: {integrity: sha512-Eaw2YTGM6WOxA6CXbckaEvslr2Ne4NFsKrvc0v97JD5awbmeBLO5w9Ho9L9kmKonrwF9RJlW6BxT1PVv/agBHQ==}
+  hono@4.11.3:
+    resolution: {integrity: sha512-PmQi306+M/ct/m5s66Hrg+adPnkD5jiO6IjA7WhWw0gSBSo1EcRegwuI1deZ+wd5pzCGynCcn2DprnE4/yEV4w==}
     engines: {node: '>=16.9.0'}
 
   honocord@0.0.14:
     resolution: {integrity: sha512-V8Il7B3aSFYHp4e2eb29FlW9fq0fjraEPeCKkVSvpIPPXV31RpmMb04+tuoObfMMlw7/4CN9RRDJZXiJCu+EMA==}
     engines: {node: '>=22.9.0'}
 
-  honocord@2.0.0-beta.1771409281:
-    resolution: {integrity: sha512-YWLB33KLipflG4QQsc1BZTRZqjvz2eKELrwGga6XIGBEHZKmrYrL2zMf/eNs5rrCC5vfWindxA1OdgxOdbZXmA==}
+  honocord@2.0.0-beta.1771411035:
+    resolution: {integrity: sha512-Lo/9CRbFmvGf8xzhjqWmv5+i2ucjnumy4nlA5sEiIInfUL7KUWJizWvlyNE7zFZZwJc6j/yxmetPH68W8HxUGw==}
     engines: {node: '>=22.9.0'}
 
   is-arrayish@0.3.4:
@@ -1059,9 +1059,9 @@ snapshots:
 
   glob-to-regexp@0.4.1: {}
 
-  hono@4.11.3: {}
+  hono@4.11.10: {}
 
-  hono@4.11.9: {}
+  hono@4.11.3: {}
 
   honocord@0.0.14:
     dependencies:
@@ -1077,7 +1077,7 @@ snapshots:
       - bufferutil
       - utf-8-validate
 
-  honocord@2.0.0-beta.1771409281:
+  honocord@2.0.0-beta.1771411035:
     dependencies:
       '@cloudflare/workers-types': 4.20260218.0
       '@discordjs/builders': 1.13.1
@@ -1085,7 +1085,7 @@ snapshots:
       '@discordjs/core': 2.4.0
       '@discordjs/rest': 2.6.0
       discord-api-types: 0.38.39
-      hono: 4.11.9
+      hono: 4.11.10
     transitivePeerDependencies:
       - bufferutil
       - utf-8-validate
