@@ -10,4 +10,7 @@ const handlers = [...Object.values(_handlers), webhookHandler];
 bot.loadHandlers(handlers);
 
 // For Cloudflare Workers
-export default bot.getApp();
+export default bot.getApp({
+  interactionsPath: "/interactions",
+  webhookPath: "/webhook",
+});
