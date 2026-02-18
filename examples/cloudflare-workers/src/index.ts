@@ -1,4 +1,4 @@
-import { AnyHandler, Honocord } from "honocord";
+import { Honocord } from "honocord";
 import * as _handlers from "./handlers";
 import webhookHandler from "./webhook";
 
