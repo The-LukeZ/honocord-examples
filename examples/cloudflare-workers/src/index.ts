@@ -1,10 +1,13 @@
 import { AnyHandler, Honocord } from "honocord";
-import * as handlers from "./handlers";
+import * as _handlers from "./handlers";
+import webhookHandler from "./webhook";
 
 const bot = new Honocord({ debugRest: true, isCFWorker: true });
 
+const handlers = [...Object.values(_handlers), webhookHandler];
+
 // Load all handlers
-bot.loadHandlers(...(Object.values(handlers) as AnyHandler[]));
+bot.loadHandlers(handlers);
 
 // For Cloudflare Workers
 export default bot.getApp();
