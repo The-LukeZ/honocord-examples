@@ -35,7 +35,7 @@ export const greetCommand = new SlashCommandHandler()
     );
     await interaction.reply({
       content: `Hello, ${name}! 👋`,
-      // components: [ar],
+      components: [ar],
     });
   });
 
