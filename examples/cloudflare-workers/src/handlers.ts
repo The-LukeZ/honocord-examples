@@ -15,7 +15,7 @@ import {
 } from "honocord";
 
 // Slash command
-const greetCommand = new SlashCommandHandler()
+export const greetCommand = new SlashCommandHandler()
   .setName("greet")
   .setDescription("Sends a greeting")
   .addStringOption((option) =>
@@ -40,7 +40,7 @@ const greetCommand = new SlashCommandHandler()
   });
 
 // Component handler for buttons
-const confirmHandler = new ComponentHandler(
+export const confirmHandler = new ComponentHandler(
   "confirm",
   ComponentType.Button,
 ).addHandler(async (interaction) => {
@@ -127,7 +127,7 @@ const confirmHandler = new ComponentHandler(
 });
 
 // Modal handler
-const reportHandler = new ModalHandler("send").addHandler(
+export const reportHandler = new ModalHandler("send").addHandler(
   async (interaction) => {
     const name = interaction.fields.getString("name", true).trim();
     const checkbox = interaction.fields.getCheckboxValue("checkbox_1", true);
@@ -156,5 +156,3 @@ const reportHandler = new ModalHandler("send").addHandler(
     });
   },
 );
-
-export { greetCommand, confirmHandler, reportHandler };
