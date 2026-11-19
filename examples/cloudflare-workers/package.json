@@ -1,22 +1,22 @@
 {
-  "name": "example-cloudflare-workers",
+  "name": "@example/cloudflare-workers",
   "type": "module",
   "private": true,
   "scripts": {
     "dev": "wrangler dev",
     "deploy": "wrangler deploy --minify",
-    "cf-typegen": "wrangler types --env-interface CloudflareBindings",
-    "register": "tsx --env-file=.env src/register.ts"
+    "cf-typegen": "wrangler types",
+    "register": "tsx --env-file=.env src/register.ts",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@discordjs/rest": "^2.6.0",
-    "discord-api-types": "^0.38.38",
-    "hono": "^4.11.3",
-    "honocord": "2.0.0-beta.1771411035"
+    "hono": "^4.13.19",
+    "honocord": "^4.0.0"
   },
   "devDependencies": {
-    "@types/node": "^25.0.3",
-    "tsx": "^4.21.0",
-    "wrangler": "^4.4.0"
+    "@types/node": "^24.0.0",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3",
+    "wrangler": "^4.163.0"
   }
 }

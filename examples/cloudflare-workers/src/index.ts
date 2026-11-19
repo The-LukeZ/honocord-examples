@@ -1,16 +1,21 @@
 import { Honocord } from "honocord";
-import * as _handlers from "./handlers";
-import webhookHandler from "./webhook";
+import { DurableObjectCacheAdapter } from "honocord/cache/do";
+import * as handlers from "./handlers";
+import type { Context } from "./types";
 
-const bot = new Honocord({ debugRest: true, isCFWorker: true });
+const bot = new Honocord({ isCFWorker: true })
+  // Cache users, members, roles and channels from interactions in a Durable Object
+  .withCache<Env>((env) => new DurableObjectCacheAdapter(env.CACHE))
+  // Middleware runs before every interaction handler
+  .use<Context>(async (c, next) => {
+    c.set("receivedAt", Date.now());
+    await next();
+  });
 
-const handlers = [...Object.values(_handlers), webhookHandler];
+bot.loadHandlers(Object.values(handlers));
 
-// Load all handlers
-bot.loadHandlers(...handlers);
+// GET * -> health check, POST / and POST /interactions -> Discord interactions
+export default bot.getApp();
 
-// For Cloudflare Workers
-export default bot.getApp({
-  interactionsPath: "/interactions",
-  webhookPath: "/webhook",
-});
+// The Durable Object class must be exported from the Worker entry point
+export { HonocordCacheDO } from "honocord/cache/do";

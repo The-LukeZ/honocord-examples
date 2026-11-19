@@ -1,13 +1,29 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "honocord-example",
+  "name": "honocord-example-workers",
   "main": "src/index.ts",
-  "compatibility_date": "2026-01-06",
+  "compatibility_date": "2026-11-01",
+  // Required by Honocord (AttachmentBuilder uses node:path)
   "compatibility_flags": ["nodejs_compat"],
   "dev": {
     "port": 8787
   },
   "observability": {
     "enabled": true
-  }
+  },
+  // Durable Object used by the Honocord cache adapter (see src/index.ts)
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "CACHE",
+        "class_name": "HonocordCacheDO"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["HonocordCacheDO"]
+    }
+  ]
 }

@@ -1,27 +1,44 @@
-# Honocord Cloudflare Workers Example
+# Cloudflare Workers Example
 
-This example demonstrates how to deploy a basic Discord bot using Honocord on Cloudflare Workers.
+A Discord bot on Cloudflare Workers with a Durable Object cache.
 
-## Environment Variables
+## Features
 
+- `/greet` with a required option and an autocompleted option
+- A button whose custom ID carries data (`feedback?<name>`), parsed with `parseCustomId`
+- A modal with a text input, radio group, checkbox group and checkbox
+- A Components V2 reply
+- A user context menu command ("User info") using the cache-aware `fetcher`
+- Middleware that sets a typed custom variable
+- `DurableObjectCacheAdapter` from `honocord/cache/do`
+
+## Setup
+
+```bash
+cp .env.example .env    # fill in your credentials
+pnpm cf-typegen         # regenerate worker-configuration.d.ts after changing wrangler.jsonc or .env
+pnpm register           # register commands with Discord
+pnpm dev                # http://localhost:8787
 ```
-DISCORD_APPLICATION_ID=your_application_id_here
-DISCORD_PUBLIC_KEY=your_public_key_here
-DISCORD_TOKEN=your_bot_token_here
-IS_CF_WORKER=true # IMPORTANT
+
+Expose the dev server (e.g. `cloudflared tunnel --url http://localhost:8787`) and set the
+**Interactions Endpoint URL** to `https://<your-url>/interactions`.
+
+## Deploy
+
+```bash
+pnpm wrangler secret bulk .env
+pnpm deploy
 ```
 
-## Scripts
+## Routes
 
-- `pnpm run dev` - Run the development server with Wrangler
-- `pnpm run deploy` - Deploy the bot to Cloudflare Workers
-- `pnpm run register` - Register the bot commands with Discord
-- `pnpm cf-typegen` - Generate Cloudflare Worker types for Honocord
+- `GET *` - health check
+- `POST /` and `POST /interactions` - Discord interactions
 
-## Notes
+## Files
 
-After starting this example, the development server will accept the following routes:
-
-- `GET /` - A simple greeting endpoint
-- `POST /interactions` - The Discord interactions endpoint handled by Honocord
-- `POST /webhooks` - The webhooks endpoint for receiving events from Discord, handled by Honocord
+- `src/index.ts` - Honocord setup, cache, middleware, Durable Object export
+- `src/handlers.ts` - all command, component and modal handlers
+- `src/types.ts` - typed interaction context
+- `src/register.ts` - command registration (run locally)

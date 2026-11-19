@@ -1,27 +1,33 @@
-# Honocord Cloudflare Workers Example
+# Webhook Events Example
 
-This example demonstrates how to deploy a basic Discord bot using Honocord on Cloudflare Workers with webhook events and sending files.
+Receive Discord [webhook events](https://docs.discord.com/developers/events/webhook-events) on Cloudflare Workers.
 
-## Environment Variables
+## Features
 
+- `APPLICATION_AUTHORIZED`: logs guild installs, DMs user installers a welcome message with a file (`AttachmentBuilder`)
+- `APPLICATION_DEAUTHORIZED`: logs user uninstalls (Discord only sends this for user installs)
+- `ENTITLEMENT_CREATE`: logs purchases
+- Worker mode handlers: Honocord answers Discord with `200` right away and runs the handler in `waitUntil`
+
+## Setup
+
+```bash
+cp .env.example .env    # fill in your credentials
+pnpm cf-typegen         # regenerate worker-configuration.d.ts after changing wrangler.jsonc or .env
+pnpm dev                # http://localhost:8788
 ```
-DISCORD_APPLICATION_ID=your_application_id_here
-DISCORD_PUBLIC_KEY=your_public_key_here
-DISCORD_TOKEN=your_bot_token_here
-IS_CF_WORKER=true # IMPORTANT
+
+Expose the dev server (e.g. `cloudflared tunnel --url http://localhost:8788`), then in the Developer Portal open
+**Webhooks**, set the URL to `https://<your-url>/webhook`, enable events and select the events above.
+
+## Deploy
+
+```bash
+pnpm wrangler secret bulk .env
+pnpm deploy
 ```
 
-## Scripts
+## Routes
 
-- `pnpm run dev` - Run the development server with Wrangler
-- `pnpm run deploy` - Deploy the bot to Cloudflare Workers
-- `pnpm run register` - Register the bot commands with Discord
-- `pnpm cf-typegen` - Generate Cloudflare Worker types for Honocord
-
-## Notes
-
-After starting this example, the development server will accept the following routes:
-
-- `GET /` - A simple greeting endpoint
-- `POST /interactions` - The Discord interactions endpoint handled by Honocord
-- `POST /webhooks` - The webhooks endpoint for receiving events from Discord, handled by Honocord
+- `GET *` - health check
+- `POST /webhook` - Discord webhook events

@@ -1,0 +1,14 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "honocord-example-webhook-events",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-11-01",
+  // Required by Honocord (AttachmentBuilder uses node:path)
+  "compatibility_flags": ["nodejs_compat"],
+  "dev": {
+    "port": 8788
+  },
+  "observability": {
+    "enabled": true
+  }
+}

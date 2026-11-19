@@ -1,7 +1,11 @@
-onlyBuiltDependencies:
-  - esbuild
-  - sharp
-  - workerd
-
 packages:
   - examples/*
+
+allowBuilds:
+  esbuild: true
+  sharp: true
+  workerd: true
+
+# honocord is released by us, no need to wait for it to "mature"
+minimumReleaseAgeExclude:
+  - honocord

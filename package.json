@@ -1,22 +1,26 @@
 {
   "name": "honocord-examples",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "description": "Example applications using Honocord",
+  "type": "module",
   "scripts": {
-    "dev:worker": "pnpm --filter example-cloudflare-workers dev",
-    "dev:custom": "pnpm --filter custom-hono-integration dev",
-    "dev:webhook": "pnpm --filter webhook-events dev",
-    "start:custom": "pnpm --filter custom-hono-integration start",
-    "register:worker": "pnpm --filter example-cloudflare-workers register",
-    "register:custom": "pnpm --filter custom-hono-integration register",
-    "register:webhook": "pnpm --filter webhook-events register",
-    "register:all": "pnpm -r register",
-    "deploy:worker": "pnpm --filter example-cloudflare-workers deploy",
-    "deploy:webhook": "pnpm --filter webhook-events deploy"
+    "typecheck": "pnpm -r typecheck",
+    "dev:workers": "pnpm --filter @example/cloudflare-workers dev",
+    "dev:node": "pnpm --filter @example/node-server dev",
+    "dev:webhook": "pnpm --filter @example/webhook-events dev",
+    "dev:dynamic": "pnpm --filter @example/dynamic-commands dev",
+    "register:workers": "pnpm --filter @example/cloudflare-workers register",
+    "register:node": "pnpm --filter @example/node-server register",
+    "register:dynamic": "pnpm --filter @example/dynamic-commands register",
+    "deploy:workers": "pnpm --filter @example/cloudflare-workers deploy",
+    "deploy:webhook": "pnpm --filter @example/webhook-events deploy"
   },
   "devDependencies": {
-    "typescript": "^5.0.0"
+    "typescript": "^6.0.3"
   },
-  "packageManager": "pnpm@10.29.2"
+  "engines": {
+    "node": ">=24"
+  },
+  "packageManager": "pnpm@12.19.0"
 }
